@@ -128,7 +128,11 @@ def announcer(playedA,playedB,scores)
 		puts "Player 2 played: #{cardBstr}"
 	end
 
-	puts "Round goes to Player "+(scores[0]>scores[1]? "1" : "2")
+	if scores[0] != scores[1]
+		puts "Round goes to Player "+(scores[0]>scores[1]? "1" : "2")
+	else
+		puts "Round ties. No points"
+	end
 end
 
 
@@ -162,4 +166,14 @@ for i in 1..p1["hand"].length
 
 	puts "\n"
 
+end
+
+puts "Final results:"
+puts "Player 1 with a total of #{p1["score"]}"
+puts "Player 2 with a total of #{p2["score"]}"
+
+if p1["score"] != p2["score"]
+	puts "Game goes to Player #{p1["score"]>p2["score"]? 1:2}"
+else
+	puts "Player 1 and Player 2 tied"
 end
